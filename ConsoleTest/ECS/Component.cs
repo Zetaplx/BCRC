@@ -1,14 +1,6 @@
 namespace Zeta.ECS;
 
-public abstract class Component
-{
-    public EntityUID ParentUID { get; private set; }
-
-    public Component(EntityUID parentUID)
-    {
-        ParentUID = parentUID;
-    }
-}
+public abstract class Component { }
 
 public static class ComponentRegistry
 {
