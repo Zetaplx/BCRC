@@ -1,0 +1,15 @@
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\bin\Debug\net9.0\ConsoleTest.exe
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\bin\Debug\net9.0\ConsoleTest.deps.json
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\bin\Debug\net9.0\ConsoleTest.runtimeconfig.json
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\bin\Debug\net9.0\ConsoleTest.dll
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\bin\Debug\net9.0\ConsoleTest.pdb
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleTest.AssemblyInfoInputs.cache
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleTest.AssemblyInfo.cs
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleTest.csproj.CoreCompileInputs.cache
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleTest.sourcelink.json
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleTest.dll
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\refint\ConsoleTest.dll
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleTest.pdb
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleTest.genruntimeconfig.cache
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\ref\ConsoleTest.dll
