@@ -1,0 +1,55 @@
+- id: plank_t1
+  name: Rough Plank
+  components:
+  - item:
+      description: "A plank of wood sawed from stripped wood."
+      tier: 1
+      rarity: Common
+
+- id: ingot_t1
+  name: Ferralith Ingot
+  components:
+  - item:
+      description: "A rectangular ingot of metal forged at a smithing station."
+      tier: 1
+      rarity: Common
+
+- id: brick_t1
+  name: Rough Brick
+  components:
+    item:
+      description: "A crude brick made of dried mud made in a kiln."
+      tier: 1
+      rarity: Common
+
+- id: leather_t1
+  name: Rough Leather
+  components:
+  - item:
+      description: "A large piece of leather. Could be used to build or craft something."
+      tier: 1
+      rarity: Common
+
+- id: cloth_t1
+  name: Rough Cloth
+  components:
+  - item:
+      description: "A thick weave of cloth made by a tailor."
+      tier: 1
+      rarity: Common
+
+- id: rope_t1
+  name: Rough Rope
+  components:
+  - item:
+      description: "A thick rope made out of multiple strands of cordage. Could be used for crafting or building."
+      tier: 1
+      rarity: Common
+
+- id: parchment_t1
+  name: Rough Parchment
+  components:
+  - item:
+      description: "A scholar could use this with ink to create study journals."
+      tier: 1
+      rarity: Common
