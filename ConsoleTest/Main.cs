@@ -10,7 +10,7 @@ public class Program
         string yaml = File.ReadAllText("C:/Users/kylgr/Desktop/Projects/BCRC/ConsoleTest/Test Data/test_data.yml");
 
 
-        ParseTest("C:/Users/kylgr/Desktop/Projects/BCRC/ConsoleTest/Test Data/test_data.yml");
+        ParseTest("C:/Users/kylgr/Desktop/Projects/BCRC/ConsoleTest/GameData/Recipes.yml");
     }
 
     public static void ParseTest(string yamlFilePath)
@@ -45,7 +45,30 @@ public class Program
                     foreach (var prop in comp.GetType().GetProperties())
                     {
                         var val = prop.GetValue(comp);
-                        Console.WriteLine($"\t\t- {prop.Name}: ({val.GetType()}) {val}");
+
+                        Console.Write($"\t\t{prop.Name}: ");
+
+                        if (val is List<object> vals)
+                        {
+                            Console.Write("[");
+                            if (vals.Count == 0) {
+                                Console.WriteLine("]");
+                                continue;
+                            } else if (vals.Count == 1) {
+                                Console.WriteLine($"{vals.First()}]");
+                                continue;
+                            }
+                                
+                            for (int i = 0; i < vals.Count - 1; i++)
+                                {
+                                    Console.Write($"{vals[i]}, ");
+                                }
+                            Console.WriteLine($"{vals.Last()}]");
+                        }
+                        else
+                        {
+                            Console.WriteLine(val);
+                        }
                     }
                 }
             }

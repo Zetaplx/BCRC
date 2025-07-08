@@ -91,19 +91,26 @@ public class RawComponent
 
     public void Parse(out Type? componentType, out Component? componentData)
     {
+        Console.WriteLine($"[Status] Attempting to parse {Key}...");
         componentData = null;
 
         if (!ComponentRegistry.TryGetComponentType(Key, out componentType))
             return;
+
+        Console.WriteLine($"[Status] Key ({Key}) found in Component Registry");
 
         var serializer = new DeserializerBuilder()
             .WithNamingConvention(HyphenatedNamingConvention.Instance)
             .IgnoreUnmatchedProperties()
             .Build();
 
+        Console.WriteLine($"[Status] Serializer Built");
+
         var yamlText = new SerializerBuilder()
             .WithNamingConvention(HyphenatedNamingConvention.Instance)
             .Build().Serialize(Data);
+
+        Console.WriteLine($"[Status] Data Deserialized");
 
         try
         {

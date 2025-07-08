@@ -3,19 +3,18 @@
   components:
   - recipe:
       inputs:
-      - id: stripped_wood_t1
-      outputs:
-      - output-static:
-          id: plank_t1
+      - item-id: stripped_wood_t1
+      static-outputs:
+      - item-id: plank_t1
   - power-craft:
       tool-type: Saw
       power: 100
   - skill-requirement:
-      skill: Carpentry
-      level: 1
+      skill-type: Carpentry
+      min-level: 1
   - tool-requirement:
-      type: Saw
+      tool-type: Saw
       min-tier: 0
   - station-requirement:
-      type: CarpentryStation
+      station-type: CarpentryStation
       min-tier: 1
