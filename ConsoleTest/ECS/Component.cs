@@ -34,3 +34,14 @@ public class ComponentKeyAttribute : Attribute
         Key = key;
     }
 }
+
+[AttributeUsage(AttributeTargets.Property)]
+public class ComponentPropertyAttribute : Attribute
+{
+    public string Key { get; }
+
+    public ComponentPropertyAttribute(string key)
+    {
+        Key = key;
+    }
+}

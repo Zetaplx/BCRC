@@ -1,0 +1,23 @@
+- id: plank_t1
+  name: Rough Plank
+  components: 
+  - rank:
+      tier: 1
+      rarity: Common
+  - storable:
+      size: small
+      inv-stack: 10
+      bank-stack: 100
+
+- id: axe_t2_uncommon
+  name: Pyrite Axe
+  components:
+  - rank:
+      tier: 2
+      rarity: Uncommon
+  - storable:
+      size: small
+      bank-stack: 10
+  - tool:
+      profession: Forestry
+      power: 14

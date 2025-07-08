@@ -31,6 +31,7 @@ public class Prototype
     }
 
     public void AddComponent<T>(T component) where T : Component => _components.Add(typeof(T), component);
+    public void AddComponent(Type componentType, Component componentData) => _components.Add(componentType, componentData);
     public bool HasComponent<T>() where T : Component => _components.ContainsKey(typeof(T));
     public bool RemoveComponent<T>() where T : Component => _components.Remove(typeof(T));
     public bool TryGetComponent<T>(out T? component) where T : Component

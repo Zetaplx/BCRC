@@ -1,11 +1,51 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "YamlDotNet/16.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/YamlDotNet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/YamlDotNet.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "YamlDotNet/16.3.0": {
+      "sha512": "SgMOdxbz8X65z8hraIs6hOEdnkH6hESTAIUa7viEngHOYaH+6q5XJmwr1+yb9vJpNQ19hCQY69xbFsLtXpobQA==",
+      "type": "package",
+      "path": "yamldotnet/16.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "images/yamldotnet.png",
+        "lib/net47/YamlDotNet.dll",
+        "lib/net47/YamlDotNet.xml",
+        "lib/net6.0/YamlDotNet.dll",
+        "lib/net6.0/YamlDotNet.xml",
+        "lib/net8.0/YamlDotNet.dll",
+        "lib/net8.0/YamlDotNet.xml",
+        "lib/netstandard2.0/YamlDotNet.dll",
+        "lib/netstandard2.0/YamlDotNet.xml",
+        "lib/netstandard2.1/YamlDotNet.dll",
+        "lib/netstandard2.1/YamlDotNet.xml",
+        "yamldotnet.16.3.0.nupkg.sha512",
+        "yamldotnet.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "YamlDotNet >= 16.3.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\kylgr\\.nuget\\packages\\": {}
@@ -13,11 +53,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kylgr\\Desktop\\Projects\\BCRC\\ConsoleTest\\ConsoleTest.csproj",
+      "projectUniqueName": "C:\\Users\\kylgr\\Desktop\\BCRC\\ConsoleTest\\ConsoleTest.csproj",
       "projectName": "ConsoleTest",
-      "projectPath": "C:\\Users\\kylgr\\Desktop\\Projects\\BCRC\\ConsoleTest\\ConsoleTest.csproj",
+      "projectPath": "C:\\Users\\kylgr\\Desktop\\BCRC\\ConsoleTest\\ConsoleTest.csproj",
       "packagesPath": "C:\\Users\\kylgr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kylgr\\Desktop\\Projects\\BCRC\\ConsoleTest\\obj\\",
+      "outputPath": "C:\\Users\\kylgr\\Desktop\\BCRC\\ConsoleTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kylgr\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -49,6 +89,12 @@
     "frameworks": {
       "net9.0": {
         "targetAlias": "net9.0",
+        "dependencies": {
+          "YamlDotNet": {
+            "target": "Package",
+            "version": "[16.3.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
