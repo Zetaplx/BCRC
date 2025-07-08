@@ -1,11 +1,12 @@
+# Wood Recipes
 - id: recipe_plank_t1
   name: Rough Plank
   components:
   - recipe:
       inputs:
-      - item-id: stripped_wood_t1
+      - item-id: item_stripped_wood_t1
       static-outputs:
-      - item-id: plank_t1
+      - item-id: item_plank_t1
   - power-craft:
       tool-type: Saw
       power: 100
@@ -19,32 +20,138 @@
       station-type: CarpentryStation
       min-tier: 1
 
+- id: recipe_stripped_wood_t1
+  name: Rough Stripped Wood
+  components:
+  - recipe:
+      inputs:
+      - item-id: item_log_t1
+        quantity: 3
+      static-outputs:
+      - item-id: item_stripped_wood_t1
+
+- id: recipe_log_t1
+  name: Rough Wood Log Output
+  components:
+  - recipe:
+      inputs:
+      - item-id: cargo_wood_trunk_t1
+      bucket-outputs:
+      - weight: 94
+        static-outputs:
+        - item-id: item_log_t1
+          quantity: 6
+      - weight: 6
+        static-outputs:
+          - item-id: item_log_t1
+            quantity: 6
+          - item-id: item_resin_t1
+
+- id: recipe_bark_t1
+  name: Rough Tree Bark Output
+  components:
+  - recipe:
+      inputs:
+      - item-id: cargo_wood_trunk_t1
+      bucket-outputs:
+      - weight: 94
+        static-outputs:
+        - item-id: item_bark_t1
+          quantity: 4
+      - weight: 6
+        static-outputs:
+        - item-id: item_bark_t1
+          quantity: 4
+        - item-id: item_resin_t1
+
+# Metal Recipes
 - id: recipe_ingot_t1
   name: Ferralith Ingot
   components:
   - recipe:
       inputs:
-      - item-id: metal_concentrate_t1
-      - item-id: log_t1
+      - item-id: item_metal_concentrate_t1
+      - item-id: item_log_t1
       static-outputs:
-      -item-id: ingot_t1
+      -item-id: item_ingot_t1
 
 - id: recipe_metal_concentrate_t1
   name: Ferralith Concentrate
   components:
   - recipe:
       inputs:
-      - item-id: ore_t1
+      - item-id: item_ore_t1
         quantity: 2
       outputs:
-      - item-id: metal_concentrate_t1
+      - item-id: item_metal_concentrate_t1
 
 - id: recipe_ore_t1
   name: Ferralith Ore
   components:
   - recipe:
       inputs:
-      - item_id: ore_chunk_t1
+      - item_id: cargo_ore_chunk_t1
       static-outputs:
-      - item-id: ore_t1
+      - item-id: item_ore_t1
         quantity: 4
+
+# Leather Recipes
+- id: recipe_leather_t1
+  name: Rough Leather
+  components:
+  - recipe:
+      inputs:
+      - item-id: item_tanned_pelt_t1
+      static-outputs:
+      - item-id: leather
+
+- id: recipe_tanned_pelt_t1
+  name: Rough Tanned Pelt
+  components:
+  - recipe:
+      inputs:
+      - item-id: item_clean_pelt_t1
+      - item-id: item_tannin_t1
+      static_outputs:
+      - item-id: item_tanned_pelt_t1
+
+- id: recipe_clean_pelt_t1
+  name: Rough Cleaned Pelt
+  components:
+  - recipe:
+      inputs:
+      - item-id: item_raw_pelt_t1
+      static-outputs:
+      - item-id: item_clean_pelt_t1
+
+- id: recipe_tannin_t1
+  name: Basic Tannin
+  components:
+  - recipe:
+      inputs:
+      - item-id: item_bark_t1
+      - item-id: item_bucket_water
+        quantity: 2
+      static-outputs:
+      - item-id: item_tannin_t1
+
+- id: recipe_raw_pelt_t1
+  name: Rough Raw Pelt Output
+  components:
+  - recipe:
+      inputs:
+      - item-id: cargo_animal_t1
+      bucket-outputs:
+      - weight: 75
+        static-inputs:
+        - item-id: item_raw_pelt_t1
+          quantity: 2
+        - item-id: item_raw_meat_t1
+          quantity: 4
+      - weight: 25
+        static-outputs:
+        - item-id: item_raw_pelt_t1
+          quantity: 2
+        - item-id: item_raw_meat_t1
+          quantity: 4
+        - item-id: item_animal_hair_t1
