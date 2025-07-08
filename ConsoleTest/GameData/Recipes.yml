@@ -18,3 +18,33 @@
   - station-requirement:
       station-type: CarpentryStation
       min-tier: 1
+
+- id: recipe_ingot_t1
+  name: Ferralith Ingot
+  components:
+  - recipe:
+      inputs:
+      - item-id: metal_concentrate_t1
+      - item-id: log_t1
+      static-outputs:
+      -item-id: ingot_t1
+
+- id: recipe_metal_concentrate_t1
+  name: Ferralith Concentrate
+  components:
+  - recipe:
+      inputs:
+      - item-id: ore_t1
+        quantity: 2
+      outputs:
+      - item-id: metal_concentrate_t1
+
+- id: recipe_ore_t1
+  name: Ferralith Ore
+  components:
+  - recipe:
+      inputs:
+      - item_id: ore_chunk_t1
+      static-outputs:
+      - item-id: ore_t1
+        quantity: 4
