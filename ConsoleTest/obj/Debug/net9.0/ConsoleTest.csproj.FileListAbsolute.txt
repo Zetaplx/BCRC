@@ -31,3 +31,6 @@ C:\Users\kylgr\Desktop\BCRC\ConsoleTest\obj\Debug\net9.0\refint\ConsoleTest.dll
 C:\Users\kylgr\Desktop\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleTest.pdb
 C:\Users\kylgr\Desktop\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleTest.genruntimeconfig.cache
 C:\Users\kylgr\Desktop\BCRC\ConsoleTest\obj\Debug\net9.0\ref\ConsoleTest.dll
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\bin\Debug\net9.0\YamlDotNet.dll
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleTest.csproj.AssemblyReference.cache
+C:\Users\kylgr\Desktop\Projects\BCRC\ConsoleTest\obj\Debug\net9.0\ConsoleT.0EB5926D.Up2Date

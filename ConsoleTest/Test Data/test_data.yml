@@ -21,3 +21,5 @@
   - tool:
       profession: Forestry
       power: 14
+  - tag:
+        tags: ["tag1", "tag2"]

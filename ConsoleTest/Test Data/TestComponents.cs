@@ -1,4 +1,6 @@
 using Zeta.ECS;
+using YamlDotNet.Core;
+using YamlDotNet.Serialization;
 
 [ComponentKey("rank")]
 public class RankComponent : Component
@@ -22,10 +24,10 @@ public class StorableComponent : Component
 {
     public StorageType Size { get; set; } = StorageType.Small;
 
-    [ComponentProperty("inv-stack")]
+    [YamlMember(Alias = "inv-stack")]
     public int InventoryStackSize { get; set; } = 1;
 
-    [ComponentProperty("bank-stack")]
+    [YamlMember(Alias = "bank-stack")]
     public int BankStackSize { get; set; } = 1;
 
     public enum StorageType
@@ -56,4 +58,9 @@ public class ToolDescriptionComponent : Component
         Smithing,
         Tailoring
     }
+}
+
+public class TagComponent : Component
+{
+    public List<string> Tags { get; set; } = new List<string>();
 }

@@ -5,6 +5,7 @@ public abstract class Component { }
 public static class ComponentRegistry
 {
     private static Dictionary<string, Type> _components = new();
+    private static Dictionary<string, (string yaml, string raw)> _properties = new();
     static ComponentRegistry()
     {
         var types = typeof(ComponentRegistry).Assembly.GetTypes()
@@ -17,7 +18,27 @@ public static class ComponentRegistry
             {
                 _components.Add(attribute.Key, type);
             }
+            else
+            {
+                string key = CamelToKebab(type.Name.Replace("Component", ""));
+                _components.Add(key, type);
+            }
         }
+    }
+
+    private static string CamelToKebab(string input)
+    {
+        if (string.IsNullOrEmpty(input))
+            return input;
+
+        // Insert a hyphen before each uppercase letter (except the first character),
+        // then convert the whole string to lowercase.
+        var kebab = System.Text.RegularExpressions.Regex.Replace(
+            input,
+            "(?<!^)([A-Z])",
+            "-$1"
+        );
+        return kebab.ToLower();
     }
 
     public static bool TryGetComponentType(string key, out Type? type) => _components.TryGetValue(key, out type);

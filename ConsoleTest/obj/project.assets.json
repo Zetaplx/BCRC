@@ -53,11 +53,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kylgr\\Desktop\\BCRC\\ConsoleTest\\ConsoleTest.csproj",
+      "projectUniqueName": "C:\\Users\\kylgr\\Desktop\\Projects\\BCRC\\ConsoleTest\\ConsoleTest.csproj",
       "projectName": "ConsoleTest",
-      "projectPath": "C:\\Users\\kylgr\\Desktop\\BCRC\\ConsoleTest\\ConsoleTest.csproj",
+      "projectPath": "C:\\Users\\kylgr\\Desktop\\Projects\\BCRC\\ConsoleTest\\ConsoleTest.csproj",
       "packagesPath": "C:\\Users\\kylgr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kylgr\\Desktop\\BCRC\\ConsoleTest\\obj\\",
+      "outputPath": "C:\\Users\\kylgr\\Desktop\\Projects\\BCRC\\ConsoleTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kylgr\\AppData\\Roaming\\NuGet\\NuGet.Config"

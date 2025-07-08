@@ -7,40 +7,54 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        string yaml = File.ReadAllText("C:/Users/kylgr/Desktop/BCRC/ConsoleTest/Test Data/test_data.yml");
+        string yaml = File.ReadAllText("C:/Users/kylgr/Desktop/Projects/BCRC/ConsoleTest/Test Data/test_data.yml");
 
 
-        var rawData = new DeserializerBuilder()
-            .WithNamingConvention(HyphenatedNamingConvention.Instance)
-            .Build()
-            .Deserialize<List<Dictionary<string, object>>>(yaml);
+        ParseTest("C:/Users/kylgr/Desktop/Projects/BCRC/ConsoleTest/Test Data/test_data.yml");
+    }
 
-        Console.WriteLine("Reading Raw Data:");
-        foreach (var data in rawData)
+    public static void ParseTest(string yamlFilePath)
+    {
+        Console.WriteLine("Loading test YAML...");
+
+        if (!File.Exists(yamlFilePath))
         {
-            string id = data["id"].ToString() ?? "invalid";
-            string name = data["name"].ToString() ?? id;
+            Console.WriteLine($"[Error] File not found at \"{yamlFilePath}\"");
+            return;
+        }
 
-            Console.WriteLine($"{id} - {name}");
-            if (data.TryGetValue("components", out var componentsObject) && componentsObject is List<object> componentObjects)
+        string yaml = File.ReadAllText(yamlFilePath);
+
+        try
+        {
+            PrototypeParser.Load(yaml);
+            Console.WriteLine("[Success] YAML loaded and parsed");
+
+            var allPrototypes = PrototypeRegistry.GetAll();
+            Console.WriteLine($"\t[Data] YAML Parsed into {allPrototypes.Count} prototype(s)");
+
+            foreach (var proto in allPrototypes)
             {
-                foreach (var compObj in componentObjects)
+                Console.WriteLine($"- ID: {proto.ID}, Name: {proto.Name}");
+
+                var components = proto.GetAllComponents();
+                foreach (var comp in components)
                 {
-                    if (compObj is Dictionary<object, object> kvp)
+                    Console.WriteLine($"\t- Component: {comp.GetType()}");
+
+                    foreach (var prop in comp.GetType().GetProperties())
                     {
-                        Console.WriteLine($"\t{kvp.Keys.First()}");
-                        if (kvp.Values.First() is Dictionary<object, object> compProps)
-                        {
-                            foreach (var compProp in compProps)
-                            {
-                                Console.WriteLine($"\t\t{compProp.Key}:{compProp.Value}");
-                            }
-                        }
-                        
+                        var val = prop.GetValue(comp);
+                        Console.WriteLine($"\t\t- {prop.Name}: ({val.GetType()}) {val}");
                     }
-                    
                 }
             }
+            
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[Error] Exception thrown during parsing: {ex.Message}");
+            Console.WriteLine(ex.StackTrace);
         }
     }
 }

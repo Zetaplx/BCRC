@@ -91,17 +91,29 @@ public class RawComponent
 
     public void Parse(out Type? componentType, out Component? componentData)
     {
-        if (ComponentRegistry.TryGetComponentType(Key, out componentType))
-        {
-            var comp = Activator.CreateInstance(componentType);
-            foreach (var prop in componentType.GetProperties())
-            {
-                var key = prop.GetCustomAttribute<ComponentPropertyAttribute>()?.Key ?? CamelToKebab(prop.Name);
-            }
-            componentData = null;
-            return;
-        }
         componentData = null;
+
+        if (!ComponentRegistry.TryGetComponentType(Key, out componentType))
+            return;
+
+        var serializer = new DeserializerBuilder()
+            .WithNamingConvention(HyphenatedNamingConvention.Instance)
+            .IgnoreUnmatchedProperties()
+            .Build();
+
+        var yamlText = new SerializerBuilder()
+            .WithNamingConvention(HyphenatedNamingConvention.Instance)
+            .Build().Serialize(Data);
+
+        try
+        {
+            var typed = serializer.Deserialize(new StringReader(yamlText), componentType);
+            componentData = typed as Component;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[Error] Failed to deserialize {Key}: {ex.Message}");
+        }
     }
 
     private static string CamelToKebab(string input)

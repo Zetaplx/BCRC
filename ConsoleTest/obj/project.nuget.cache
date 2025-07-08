@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1T4V574hIzU=",
+  "dgSpecHash": "Ly4BQYPrlXg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\kylgr\\Desktop\\BCRC\\ConsoleTest\\ConsoleTest.csproj",
+  "projectFilePath": "C:\\Users\\kylgr\\Desktop\\Projects\\BCRC\\ConsoleTest\\ConsoleTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kylgr\\.nuget\\packages\\yamldotnet\\16.3.0\\yamldotnet.16.3.0.nupkg.sha512"
   ],

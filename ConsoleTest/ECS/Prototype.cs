@@ -44,6 +44,8 @@ public class Prototype
         component = null;
         return false;
     }
+
+    public List<Component> GetAllComponents() => _components.Values.ToList();
 }
 
 public static class PrototypeRegistry
@@ -51,6 +53,8 @@ public static class PrototypeRegistry
     private static Dictionary<string, Prototype> _prototypes = new();
 
     public static void Add(Prototype prototype) => _prototypes.Add(prototype.ID, prototype);
+
+    public static List<Prototype> GetAll() => _prototypes.Values.ToList();
     public static bool TryGet(string key, out Prototype? prototype) => _prototypes.TryGetValue(key, out prototype);
 
     /// <summary>
