@@ -15,6 +15,22 @@ public class RecipeComponent : Component
         public int Quanity { get; set; } = 1;
     }
 
+    /*
+        One possible reimagining of this system
+        can be gleamed from the BitCraftDex
+        representation of "Outputs"
+
+        Basically, there are only buckets. Everything
+        is a bucket. Static outputs? Buckets with only
+        1 bucket. Range outputs? One bucket for each item
+        quantity! Bucket outputs are the same, obviously.
+
+        This dramatically simplifies the output architecture
+        of the recipe system. No more 3 different types of
+        outputs with different classes. Just the one unified system.
+
+    */
+
     public class OutputStatic
     {
         public string ItemId { get; set; } = "invalid";
