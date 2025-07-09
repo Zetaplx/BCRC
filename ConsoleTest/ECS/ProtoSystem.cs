@@ -5,5 +5,5 @@
 /// </summary>
 public abstract class ProtoSystem
 {
-    
+    public virtual void Start() { }
 }

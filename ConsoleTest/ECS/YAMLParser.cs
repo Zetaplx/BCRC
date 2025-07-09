@@ -1,7 +1,8 @@
+namespace Zeta.ECS;
+
 using YamlDotNet.Serialization;
 using YamlDotNet.Core;
 using YamlDotNet.Serialization.NamingConventions;
-using Zeta.ECS;
 using System.Reflection;
 using System.Linq;
 

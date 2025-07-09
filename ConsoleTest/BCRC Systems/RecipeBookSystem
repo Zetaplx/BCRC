@@ -1,0 +1,35 @@
+using Zeta.ECS;
+using System.Reflection;
+
+public class RecipeBookSystem : ProtoSystem
+{
+    public static RecipeBookComponent AssemblyRecipeBook;
+
+    public override void Start()
+    {
+        AssemblyRecipeBook = new RecipeBookComponent();
+
+        if (!PrototypeRegitry.TryGetAllWithComponent<RecipeComponent>(out var recipes))
+            throw new Exception("Unable to find recipes in PrototypeRegistry");
+
+        foreach (var proto in recipes)
+        {
+            if (!proto.TryGetComponent<RecipeComponent>(out var comp))
+                throw new Exception($"Recipe component not found on prototype {proto.ID}. Prototype incorrectly selected.");
+            HashSet<string> inputs = new HashSet<string>();
+            foreach (var input in comp.Inputs) inputs.Add(input.ItemId);
+
+            HashSet<string> outputs;
+            foreach (var staticOut in comp.StaticOutputs) outputs.Add(staticOut.ItemId);
+            foreach (var rangeOut in comp.RangeOutputs) outputs.Add(rangeOut.ItemId);
+            foreach (var bucketOut in comp.RangeOutputs)
+            {
+                foreach (var bucketStaticOut in bucketOut.StaticOutputs) outputs.Add(bucketStaticOut.ItemId);
+                foreach (var bucketRangeOut in bucketOut.RangeOutputs) outputs.Add(bucketRangeOut.ItemId);
+            }
+
+            AssemblyRecipeBook.RecipesByInput.Add(new RecipeLink(proto.ID, inputs));
+            AssemblyRecipeBook.RecipesByOutput.Add(new RecipeLink(proto.ID, outputs));
+        }
+    }
+}

@@ -236,7 +236,7 @@
           quantity: 1
         - item-id: item_wispweave_filament_t1
           quantity: 4
-        - weight: 20
+      - weight: 20
         static-outputs:
         - item-id: item_wispweave_seeds_t1
           quantity: 1
