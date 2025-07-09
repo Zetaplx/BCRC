@@ -236,7 +236,7 @@
           quantity: 1
         - item-id: item_wispweave_filament_t1
           quantity: 4
-      - weight: 20
+        - weight: 20
         static-outputs:
         - item-id: item_wispweave_seeds_t1
           quantity: 1
@@ -320,4 +320,43 @@
         - item-id: item_river_filet_t1
           quantity: 2
         - item-id: item_oil_t1
+
+# Stone Recipes
+- id: recipe_brick_t1
+  name: Rough Brick
+  components:
+  - recipe:
+      inputs:
+      - item-id: item_unfired_brick_t1
+      - item-id: item_log_t1
+      static-outputs:
+      - item-id: item_brick_t1
+
+- id: recipe_unfired_brick_t1
+  name: Unfired Rough Brick
+  components:
+  - recipe:
+      inputs:
+      - item-id: item_potter_t1
+      static-outputs:
+      - item-id: item_unfired_brick_t1
+
+- id: recipe_potter_t1
+  name: Basic Potter's Mix
+  components:
+  - recipe:
+      inputs:
+      - item-id: item_pebble_t1
+        quantity: 5
+      - item-id: item_clay_t1
+        quantity: 2
+
+- id: recipe_pebble_t1
+  name: Rough Pebbles
+  components:
+  - recipe:
+      inputs:
+      - item-id: cargo_stone_chunk_t1
+      bucket-outputs:
+      
 
