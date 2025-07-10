@@ -5,7 +5,7 @@
   - recipe:
       inputs:
       - item-id: item_stripped_wood_t1
-      static-outputs:
+      outputs:
       - item-id: item_plank_t1
   - power-craft:
       tool-type: Saw
@@ -27,7 +27,7 @@
       inputs:
       - item-id: item_log_t1
         quantity: 3
-      static-outputs:
+      outputs:
       - item-id: item_stripped_wood_t1
 
 - id: recipe_log_t1
@@ -36,16 +36,15 @@
   - recipe:
       inputs:
       - item-id: cargo_wood_trunk_t1
-      bucket-outputs:
-      - weight: 94
-        static-outputs:
-        - item-id: item_log_t1
-          quantity: 6
-      - weight: 6
-        static-outputs:
-          - item-id: item_log_t1
-            quantity: 6
-          - item-id: item_resin_t1
+      outputs:
+      - item-id: item_log_t1
+        quantity: 6
+      - weight-index: 1
+        item-id: item_log_t1
+        quantity: 6
+      - weight-index: 1
+      - item-id: item_resin_t1
+      weights: [94, 6]
 
 - id: recipe_bark_t1
   name: Rough Tree Bark Output
@@ -53,16 +52,15 @@
   - recipe:
       inputs:
       - item-id: cargo_wood_trunk_t1
-      bucket-outputs:
-      - weight: 94
-        static-outputs:
-        - item-id: item_bark_t1
-          quantity: 4
-      - weight: 6
-        static-outputs:
-        - item-id: item_bark_t1
-          quantity: 4
-        - item-id: item_resin_t1
+      outputs:
+      - item-id: item_bark_t1
+        quantity: 4
+      - weight-index: 1
+        item-id: item_bark_t1
+        quantity: 4
+      - weight-index: 1
+        item-id: item_resin_t1
+      weights: [94, 6]
 
 # Metal Recipes
 - id: recipe_ingot_t1
@@ -72,7 +70,7 @@
       inputs:
       - item-id: item_metal_concentrate_t1
       - item-id: item_log_t1
-      static-outputs:
+      outputs:
       -item-id: item_ingot_t1
 
 - id: recipe_metal_concentrate_t1
@@ -91,7 +89,7 @@
   - recipe:
       inputs:
       - item_id: cargo_ore_chunk_t1
-      static-outputs:
+      outputs:
       - item-id: item_ore_t1
         quantity: 4
 
@@ -102,7 +100,7 @@
   - recipe:
       inputs:
       - item-id: item_tanned_pelt_t1
-      static-outputs:
+      outputs:
       - item-id: leather
 
 - id: recipe_tanned_pelt_t1
@@ -112,7 +110,7 @@
       inputs:
       - item-id: item_clean_pelt_t1
       - item-id: item_tannin_t1
-      static_outputs:
+      outputs:
       - item-id: item_tanned_pelt_t1
 
 - id: recipe_clean_pelt_t1
@@ -121,7 +119,7 @@
   - recipe:
       inputs:
       - item-id: item_raw_pelt_t1
-      static-outputs:
+      outputs:
       - item-id: item_clean_pelt_t1
 
 - id: recipe_tannin_t1
@@ -132,16 +130,18 @@
       - item-id: item_bark_t1
       - item-id: item_bucket_water
         quantity: 2
-      static-outputs:
+      outputs:
       - item-id: item_tannin_t1
 
+
+# TODO
 - id: recipe_raw_pelt_t1
   name: Rough Raw Pelt Output
   components:
   - recipe:
       inputs:
       - item-id: cargo_animal_t1
-      bucket-outputs:
+      outputs:
       - weight: 75
         static-inputs:
         - item-id: item_raw_pelt_t1
@@ -149,7 +149,7 @@
         - item-id: item_raw_meat_t1
           quantity: 4
       - weight: 25
-        static-outputs:
+        outputs:
         - item-id: item_raw_pelt_t1
           quantity: 2
         - item-id: item_raw_meat_t1
@@ -165,7 +165,8 @@
       - item-id: item_cloth_strip_t1
       - item-id: item_wispweave_filament_t1
         quantity: 5
-      static-outputs: item_cloth_t1
+      outputs: 
+      - item-id: item_cloth_t1
 
 - id: recipe_rope_t1
   name: Rough Rope
@@ -173,7 +174,7 @@
   - recipe:
       inputs:
       - item-id: item_cloth_strip_t1
-      static-outputs:
+      ouptuts:
       - item-id: item_rope_t1
 
 - id: recipe_cloth_strip_t1
@@ -182,7 +183,7 @@
   - recipe:
       inputs:
       - item-id: item_thread_t1
-      static-output:
+      outputs:
       - item-id: item_cloth_strip_t1
 
 - id: recipe_thread_t1
@@ -192,7 +193,7 @@
       inputs:
       - item-id: item_plant_fiber_t1
         quantity: 40
-      static-outputs:
+      outputs:
       - item-id: item_thread_t1
 
 - id: recipe_plant_fiber_t1
@@ -201,7 +202,7 @@
   - recipe:
       inputs:
       - item-id: cargo_roots_t1
-      static-outputs:
+      outputs:
       - item-id: item_plant_fiber_t1
         quantity: 100
 
@@ -211,37 +212,41 @@
   - recipe:
       inputs:
       - item-id: item_wispweave_t1
-      bucket-outputs:
-      - weight: 20
-        static-outputs:
-        - item-id: item_wispweave_seeds_t1
-          quantity: 3
-        - item-id: item_wispweave_filament_t1
-          quantity: 2
-      - weight: 20
-        static-outputs:
-        - item-id: item_wispweave_seeds_t1
-          quantity: 2
-        - item-id: item_wispweave_filament_t1
-          quantity: 2
-      - weight: 20
-        static-outputs:
-        - item-id: item_wispweave_seeds_t1
-          quantity: 1
-        - item-id: item_wispweave_filament_t1
-          quantity: 3
-      - weight: 20
-        static-outputs:
-        - item-id: item_wispweave_seeds_t1
-          quantity: 1
-        - item-id: item_wispweave_filament_t1
-          quantity: 4
-        - weight: 20
-        static-outputs:
-        - item-id: item_wispweave_seeds_t1
-          quantity: 1
-        - item-id: item_wispweave_filament_t1
-          quantity: 5
+      outputs:
+      - item-id: item_wispweave_seeds_t1
+        quantity: 3
+      - item-id: item_wispweave_filament_t1
+        quantity: 2
+
+      - bucket-index: 1
+        item-id: item_wispweave_seeds_t1
+        quantity: 2
+      - bucket-index: 1
+        item-id: item_wispweave_filament_t1
+        quantity: 2
+
+      - bucket-index: 2
+        item-id: item_wispweave_seeds_t1
+        quantity: 1
+      - bucket-index: 2
+        item-id: item_wispweave_filament_t1
+        quantity: 3
+
+      - bucket-index: 3
+        item-id: item_wispweave_seeds_t1
+        quantity: 1
+      - bucket-index: 3
+        item-id: item_wispweave_filament_t1
+        quantity: 4
+
+      - bucket-index: 4
+        item-id: item_wispweave_seeds_t1
+        quantity: 1
+      - bucket-index: 4
+        item-id: item_wispweave_filament_t1
+        quantity: 5
+
+      weights: [20, 20, 20, 20, 20]
 
 - id: recipe_wispweave_t1
   name: Basic Wispweave Plant
@@ -250,7 +255,7 @@
       inputs:
       - item-id: item_wispweave_seeds_t1
       - item-id: item_fertilizer_t1
-      static-outputs:
+      outputs:
       - item-id: item_wispweave_plant_t1
 
 - id: recipe_wispweave_wild_t1
@@ -261,7 +266,7 @@
       - item-id: item_wispweave_seed_wild_t1
         quantity: 5
       - item-id: item_feetilizer_t1
-      static-outputs:
+      outputs:
       - item-id: item_wispweave_plant_t1
 
 - id: recipe_fertilizer_fruit_t1
@@ -271,7 +276,7 @@
       inputs:
       - item-id: item_fruit_t1
         quantity: 2
-      static-outputs:
+      outputs:
       - item-id: item_fertilizer_t1
 
 - id: recipe_fertilizer_flower_t1
@@ -281,7 +286,7 @@
       inputs:
       - item-id: item_flower_t1
         quantity: 2
-      static-outputs:
+      outputs:
       - item-id: item_fertilizer_t1
 
 - id: recipe_fertilizer_fish_t1
@@ -291,7 +296,7 @@
       inputs:
       - item-id: item_river_filet_t1
         quantity: 2
-      static-outputs:
+      outputs:
       - item-id: item_fertilizer_t1
 
 - id: recipe_fertilizer_waste_t1
@@ -301,8 +306,10 @@
       inputs:
       - item-id: item_food_waste_t1
         quantity: 2
-      static-outputs:
+      outputs:
       - item-id: item_fertilizer_t1
+
+# TODO, and below, left off here.
 
 - id: recipe_river_filet_t1
   name: Breezy Fin Darter Products
@@ -310,7 +317,7 @@
   - recipe:
       inputs:
       - item-id: item_river_fish_t1
-      bucket-outputs:
+      outputs:
       - weight: 50
         static-outputs:
         - item-id: item_river_filet_t1
@@ -320,6 +327,7 @@
         - item-id: item_river_filet_t1
           quantity: 2
         - item-id: item_oil_t1
+      weights: [50, 50]     
 
 # Stone Recipes
 - id: recipe_brick_t1

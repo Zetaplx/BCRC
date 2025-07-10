@@ -6,6 +6,8 @@ public class RecipeComponent : Component
 {
     public List<InputData> Inputs { get; set; } = new();
     public List<OutputData> Outputs { get; set; } = new();
+    [YamlMember(Alias = "weights")]
+    public List<int> BucketWeights { get; set; } = new();
     
     public class InputData
     {
@@ -15,14 +17,9 @@ public class RecipeComponent : Component
 
     public class OutputData
     {
-        public int Weight { get; set; } = 1;
-        public List<OutputItem> Items { get; set; } = new();
-        
-        class OutputItem 
-        {
-            public string ItemId { get; set; } = "invalid";
-            public int Quantity { get; set; } = 1;
-        }
+        public string ItemID { get; set; } = "invalid";
+        public int Quantity { get; set; } = 1;
+        public int BucketIndex { get; set; } = 0;
     }
 }
 
